@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2ddl:
+          auto: none
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    url: "jdbc:derby:memory:person;create=true"
+    username: APP
+    password:
+  sql:
+    init:
+      schema-locations: classpath:/person_schema.sql
+      data-locations:
+        - classpath:/add_person1.sql
+        - classpath:/add_person2.sql
+      mode: always
+      continue-on-error: true
