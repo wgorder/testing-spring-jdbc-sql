@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2ddl:
+          auto: create
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    url: "jdbc:derby:memory:person;create=true"
+    username: APP
+    password:
+  sql:
+    init:
+#      schema-locations: classpath:/xyz.sql
+#      data-locations:
+#        - classpath:/data.sql
+#        - classpath:/data2.sql
+      mode: always
+      continue-on-error: true
+logging:
+  level:
+    org.hibernate.sql: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+#    org.springframework.security: DEBUG
